@@ -1,0 +1,13 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@layer base {
+
+.text-orange-200 {
+    --tw-text-opacity: 1;
+    color: rgb(254 215 170) / var(--tw-text-opacity);
+  }
+}
