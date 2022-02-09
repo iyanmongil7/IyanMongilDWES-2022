@@ -23,14 +23,20 @@
                     <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
                         {{ config('app.name', 'Laravel') }}
                     </a>
+                    @auth
                     <a href="{{ route('projects.index')}}" class="text-lg font-semibold text-orange-200 no-underline">
                         {{  __('proyectos') }}
                     </a>
                     <a href="{{ route('contacta.index')}}" class="text-lg font-semibold text-orange-200 no-underline">
                         {{  __('contacto') }}
                     </a>
+                    @endauth
+                    @if(Auth::check() and Auth::user()->hasRoles('admin'))
+                    <a href="{{route('admin.index')}}" class="text-lg font-semibold text-gray-100 no-underline">
+                        {{__('Admin') }}
+                    </a>
+                    @endif
                 
-                   
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     @guest
