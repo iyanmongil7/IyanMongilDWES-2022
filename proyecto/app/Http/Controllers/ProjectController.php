@@ -11,7 +11,7 @@ class ProjectController extends Controller
     {
         $this->middleware("auth");
     }
-    //prueba
+    //cambiar index
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +19,11 @@ class ProjectController extends Controller
      */
     public function index()
     {
+        if(auth()->user()->id==1){
+            $projects = Project::paginate(10);
+        }else{
         $projects = Project::where("user_id" , "=", auth()->user()->id)->paginate(10);
+    }
         return view("projects.index", compact("projects"));
     }
 

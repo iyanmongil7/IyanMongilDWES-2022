@@ -17,22 +17,22 @@
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
-        <header class="bg-blue-900 py-6">
+        <header class="bg-blue-500 py-6">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
                     <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     @auth
-                    <a href="{{ route('projects.index')}}" class="text-lg font-semibold text-orange-200 no-underline">
-                        {{  __('proyectos') }}
+                    <a href="{{ route('projects.index')}}" class="text-lg font-semibold text-orange-200 no-underline px-3">
+                        {{  __('Proyectos') }}
                     </a>
-                    <a href="{{ route('contacta.index')}}" class="text-lg font-semibold text-orange-200 no-underline">
-                        {{  __('contacto') }}
+                    <a href="{{ route('contacta.index')}}" class="text-lg font-semibold text-orange-200 no-underline px-3">
+                        {{  __('Contacto') }}
                     </a>
                     @endauth
                     @if(Auth::check() and Auth::user()->hasRoles('admin'))
-                    <a href="{{route('admin.index')}}" class="text-lg font-semibold text-gray-100 no-underline">
+                    <a href="{{route('admin.index')}}" class="text-lg font-semibold text-orange-200 no-underline px-3">
                         {{__('Admin') }}
                     </a>
                     @endif
