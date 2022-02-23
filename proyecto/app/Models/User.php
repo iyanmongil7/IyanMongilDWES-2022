@@ -51,5 +51,8 @@ class User extends Authenticatable
     public function hasRoles($role){
         return(Boolean) $this->roles()->where('name', $role)->first();
     }
+    public function adminlte_image(){
+        return 'https://piscsum.photos/300/300';
+    }
     
 }

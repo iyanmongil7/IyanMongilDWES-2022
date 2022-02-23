@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Panel de control',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Projects</b>CPY',
+    'logo_img' => 'vendor/adminlte/dist/img/admin.jpg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -65,7 +65,7 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
+    'usermenu_header' => true,
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
     'usermenu_desc' => false,
@@ -83,10 +83,10 @@ return [
     |
     */
 
-    'layout_topnav' => null,
-    'layout_boxed' => null,
+    'layout_topnav' => false,
+    'layout_boxed' => true,
     'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
@@ -121,7 +121,7 @@ return [
     |
     */
 
-    'classes_body' => '',
+    'classes_body' => 'adminlte',
     'classes_brand' => '',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
@@ -253,17 +253,24 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Proyectos'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Crear proyecto',
+            'url'  => 'admin/create_project',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'text' => 'Listar proyectos',
+            'url'  => 'admin/list_projects',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        ['header' => 'Usuarios'],
+        [
+            'text' => 'Listar Usuarios',
+            'url'  => 'admin/list_users',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
@@ -318,6 +325,8 @@ return [
             'icon_color' => 'cyan',
             'url'        => '#',
         ],
+
+        
     ],
 
     /*
