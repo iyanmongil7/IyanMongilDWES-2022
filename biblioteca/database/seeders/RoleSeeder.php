@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Sapatie\Permission\Models\Role;
-use Sapatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class RoleSeeder extends Seeder
 {
@@ -15,11 +15,11 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        $role1=Role::create(['name' =>'admin','display_name'=>'administrador']);
-        $role2=Role::create(['name' =>'developer','display_name'=>'desarrollador']);
-        $role3=Role::create(['name' =>'guest','display_name'=>'invitado']);
-        Permission::create(['name'=>'admin']);
-        Permission::create(['name'=>'admin.list_users']);
-        Permission::create(['name'=>'admin.list_projects']);
+        $role1=Role::create(['name' =>'admin']);
+        $role2=Role::create(['name' =>'developer']);
+        $role3=Role::create(['name' =>'guest']);
+        Permission::create(['name'=>'admin']) ->syncRoles([$role1,$role2]);
+        Permission::create(['name'=>'admin.list_users']) ->syncRoles($role1);
+        Permission::create(['name'=>'admin.list_projects'])->syncRoles([$role1,$role2,$role3]);
     }
 }
