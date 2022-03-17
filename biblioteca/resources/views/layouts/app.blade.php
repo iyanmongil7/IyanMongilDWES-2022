@@ -23,12 +23,15 @@
                     <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
                         {{ config('app.name', 'Laravel') }}
                     </a>
-                    @if(Auth::check() and Auth::user()->can('admin'))
+                    @if(Auth::check() and Auth::user()->hasRoles('admin'))
                     <a href="{{url('admin')}}" class="text-lg font-semibold text-orange-200 no-underline px-3">
                         {{__('Admin') }}
                     </a>
 
                     @endif
+                    <a href="{{ url('/librosUser') }}" class="text-lg font-semibold text-gray-100 no-underline">
+                        {{ config('LibroController.name', 'Libros') }}
+                    </a>
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     @guest

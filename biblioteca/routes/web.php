@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\LibroController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +25,16 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 
 Route::prefix('admin')->group(function(){
     Route::get('/',[\App\Http\Controllers\Admin\AdminController::class,'index']);
-    Route::get('/list-users',[AdminController::class,'list_users']);
-    Route::get('/list-projects',[AdminController::class,'list_projects']);
     Route::get('users', [UserController::class, 'index']);
-}); 
+    
+    Route::resource('/libros', LibroController::class);
+
+});
+
+Route::get('/librosUser', [\App\Http\Controllers\LibroController::class, 'index'])->name('librosUser');
+
+
+
 
 
 Auth::routes();

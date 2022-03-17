@@ -46,4 +46,9 @@ class User extends Authenticatable
     public function hasRoles($role){
         return(Boolean) $this->roles()->where('name', $role)->first();
     }
+    
+    public function libro()
+    {
+        return $this->belongsToMany(Libro::class)->withTimestamps();
+    }
 }
