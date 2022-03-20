@@ -109,7 +109,8 @@ class LibroController extends Controller
         ]);*/
         $libros= Libro::find($id);
         $libros->fill($request->only("nombre", "autor", "editorial", "año"))->save();
-        return back()->with("success",__("Libro actualizado!"));
+        return redirect(route("libros.index"))
+        ->with("success", __("Libro creado!"));
     }
 
     /**

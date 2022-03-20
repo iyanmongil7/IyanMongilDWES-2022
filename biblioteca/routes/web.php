@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\LibroController;
+use App\Mail\ContactaMail;
+use Illuminate\Support\Facades\Mail;
 
 
 /*
@@ -32,7 +34,14 @@ Route::prefix('admin')->group(function(){
 });
 
 Route::get('/librosUser', [\App\Http\Controllers\LibroController::class, 'index'])->name('librosUser');
+Route::get('/libroslistas', [\App\Http\Controllers\LibroController::class, 'listalibros'])->name('libroslistas');
 
+
+Route::get('contacta', function (){
+    $correo=new ContactaMail;
+    Mail::to('iyanmg49@educastur.es')->send($correo);
+    return("mensaje enviado");
+});
 
 
 

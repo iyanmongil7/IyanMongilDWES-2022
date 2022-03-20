@@ -11,17 +11,25 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script defer src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
-        <header class="bg-blue-900 py-6">
-            <div class="container mx-auto flex justify-between items-center px-6">
+        <header class="bg-black py-6">
+            <div class="container mx-auto flex justify-between items-center px-6 ">
                 <div>
                     <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
-                        {{ config('app.name', 'Laravel') }}
+                        BIBLIOTECA
                     </a>
                     @if(Auth::check() and Auth::user()->hasRoles('admin'))
                     <a href="{{url('admin')}}" class="text-lg font-semibold text-orange-200 no-underline px-3">
@@ -29,9 +37,19 @@
                     </a>
 
                     @endif
-                    <a href="{{ url('/librosUser') }}" class="text-lg font-semibold text-gray-100 no-underline">
-                        {{ config('LibroController.name', 'Libros') }}
+                   
+                    <a href="{{ url('/librosUser') }}" class="p-5 text-lg font-semibold text-gray-100 no-underline">
+                        {{ config('LibroController.name', 'LISTADO') }}
                     </a>
+                    
+                    <a href="{{ url('/libroslistas') }}" class="p-5 text-lg font-semibold text-gray-100 no-underline">
+                        {{ config('LibroController.name', 'CATÁLOGO') }}
+                    </a>
+
+                    <a href="{{ url('/contacta') }}" class="p-5 text-lg font-semibold text-gray-100 no-underline">
+                        {{ config('LibroController.name', 'CONTACTA') }}
+                    </a>
+
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     @guest
