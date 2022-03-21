@@ -23,9 +23,10 @@ class LibroController extends Controller
         $libros=Libro::paginate(10);
         return view("libros", compact("libros"));
     }
-    public function listalibros(){
-        $users = User::paginate(10);
-        return view('admin.users.libros.libroslistas', compact("users"));
+
+    public function catalogolibros(){
+        $libros = Libro::all();
+        return view('admin.users.libros.libroslistas', compact('libros'));
     }
 
     

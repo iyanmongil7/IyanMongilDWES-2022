@@ -13,6 +13,7 @@
         <th scope="col">{{ ("Autor") }}</th>
         <th scope="col">{{ ("Editorial") }}</th>
         <th scope="col">{{ ("Año") }}</th>
+        <th scope="col">{{ ("Imagen") }}</th>
     </tr>
     </thead>
     <tbody>
@@ -23,6 +24,7 @@
                 <td>{{ $libro->autor }}</td>
                 <td>{{ $libro->editorial}}</td>
                 <td>{{ $libro->año }}</td>
+                <td>{{ $libro->imagen }}</td>
 
                 <td><a href="{{route('libros.edit',  $libro->id )}}" class="btn btn-primary btn-sm">Editar</a></td>
                 <td>

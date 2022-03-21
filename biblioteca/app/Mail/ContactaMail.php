@@ -12,7 +12,7 @@ class ContactaMail extends Mailable
 {
     use Queueable, SerializesModels;
     public $asunto="imformacion de contacto";
-    
+    public $contacto;
     /**
      * Create a new message instance.
      *
@@ -30,7 +30,8 @@ class ContactaMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.contacta');
+        return $this->view('email.index');
     }
+
 }
 

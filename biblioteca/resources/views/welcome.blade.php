@@ -27,6 +27,7 @@
             @endauth
           
         </div>
+
         <img src="{{asset('libro.png')}}">
     @endif
 </div>

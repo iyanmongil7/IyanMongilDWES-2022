@@ -19,6 +19,7 @@ class CreateLibrosTable extends Migration
             $table->string('autor');
             $table->string('editorial');
             $table->string('año');
+            $table->string('imagen');
             $table->timestamps();
         });
     }

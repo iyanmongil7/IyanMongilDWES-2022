@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Models\Libro;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class LibroController extends Controller
 {
@@ -52,6 +53,7 @@ class LibroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -59,13 +61,19 @@ class LibroController extends Controller
             "autor" => "required|string",
             "editorial" => "required|string",
             "año" => "required|string",
+            "imagen" => "required|image|mimes:jpg,gif,png,jpeg",
         ]);
-        Libro::create($request->only("nombre", "autor", "editorial", "año"));
 
+        Libro::create([
+            'nombre'=>$request->input("nombre"),
+            'autor'=>$request->input("autor"),
+            'editorial'=>$request->input("editorial"),
+            'año'=>$request->input("año"),
+            'imagen'=>$request->file("imagen")->store('', 'images'),
+        ]);
         return redirect(route("libros.index"))
-            ->with("success", __("Libro creado!"));
+        ->with("success", __("Libro creado!"));
     }
-
     /**
      * Display the specified resource.
      *
@@ -101,18 +109,32 @@ class LibroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
-        /*$this->validate($request, [
-            "name" => "required|string:libro,nombre," .$libros->id,
-            "description" => "nullable|string|min:10"
-        ]);*/
-        $libros= Libro::find($id);
-        $libros->fill($request->only("nombre", "autor", "editorial", "año"))->save();
+        $this->validate($request, [
+            "nombre"=>"required|max:140|unique:libros",
+            "autor" => "required|string",
+            "editorial" => "required|string",
+            "año" => "required|string",
+            "imagen" => "image|mimes:jpg,gif,png,jpeg",
+        ]);
+
+
+        $libro = Libro::find($id);
+        $libro -> nombre = $request->get('nombre');
+        $libro -> autor = $request->get('autor');
+        $libro -> editorial = $request->get('editorial');
+        $libro -> año = $request->get('año');
+        if($request->hasFile('imagen')){
+            Storage::disk('images')->delete('images/'.$libro ->Imagen);
+            $libro -> Imagen = $request->file('imagen')->store('','images');
+        }
+
+        $libro -> save();
         return redirect(route("libros.index"))
         ->with("success", __("Libro creado!"));
     }
-
     /**
      * Remove the specified resource from storage.
      *

@@ -6,12 +6,11 @@
 <table class="table table-danger table-striped" style="width: 100%">
     <thead>
     <tr>
-        
-
         <th scope="col">{{ ("Nombre") }}</th>
         <th scope="col">{{ ("Autor") }}</th>
         <th scope="col">{{ ("Editorial") }}</th>
         <th scope="col">{{ ("Año") }}</th>
+        <th scope="col">{{ ("Imagen") }}</th>
     </tr>
     </thead>
     <tbody>
@@ -22,6 +21,7 @@
                 <td>{{ $libro->autor }}</td>
                 <td>{{ $libro->editorial}}</td>
                 <td>{{ $libro->año }}</td>
+                <td>{{ $libro->imagen }}</td>
 
             
             </tr>
