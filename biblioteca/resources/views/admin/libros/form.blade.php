@@ -16,7 +16,7 @@
             </label>
             <input name="nombre"  placeholder="introduzca nombre" size="30" value="{{ $libro->nombre }}" class="form-control appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="nombre" type="text">
  
-            @error("name")
+            @error("nombre")
             <div class="border border-red-400 rounded-b bg-red-100 mt-1 px-4 py-3 text-red-700">
                 {{ $message }}
             </div>
@@ -45,7 +45,7 @@
             </label>
             <input value="{{ $libro->editorial }}" size="30" name="editorial" placeholder="introduzca editorial" class="form-control no-resize appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="editorial"></input>
 
-            @error("description")
+            @error("editorial")
             <div class="border border-red-400 rounded-b bg-red-100 mt-1 px-4 py-3 text-red-700">
                 {{ $message }}
             </div>
@@ -60,7 +60,7 @@
             </label>
             <input value="{{ $libro->año }}" name="año" size="30"  placeholder="introduzca año" class="form-control no-resize appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="año"></input>
 
-            @error("description")
+            @error("año")
             <div class="border border-red-400 rounded-b bg-red-100 mt-1 px-4 py-3 text-red-700">
                 {{ $message }}
             </div>

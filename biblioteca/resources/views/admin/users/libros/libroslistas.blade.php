@@ -28,7 +28,7 @@
                 <tr>
                     <td colspan="4">
                         <div class="bg-red-100  border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                            <p><strong class="font-bold">{{ ("No hay Juegos") }}</strong></p>
+                            <p><strong class="font-bold">{{ ("No hay Libros") }}</strong></p>
                             <span class="block sm:inline">{{ ("Todavía no hay nada que mostrar aquí") }}</span>
                         </div>
                     </td>
