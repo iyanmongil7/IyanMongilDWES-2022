@@ -14,9 +14,11 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="bg-black h-screen antialiased leading-none font-sans">
+    
 <div class="flex flex-col has-bg-img">
     @if(Route::has('login'))
         <div class="absolute top-0 right-0 mt-4 mr-4 space-x-4 sm:mt-6 sm:mr-6 sm:space-x-6">
+            
             @auth
                 <a href="{{ url('/home') }}" class="text-white no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
             @else
@@ -25,11 +27,13 @@
                     <a href="{{ route('register') }}" class="text-white no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
                 @endif
             @endauth
-          
+            
         </div>
-
-        <img src="{{asset('libro.png')}}">
+        <img src="{{asset('libro.png')}}" >
+       
+       
     @endif
+
 </div>
 </body>
 </html>

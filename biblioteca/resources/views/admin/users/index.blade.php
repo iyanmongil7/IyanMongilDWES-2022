@@ -2,9 +2,9 @@
 
 @section("content")
 
-    <h1 class="text-center text-success">{{ __("Listado de usuarios") }}</h1>
+    <h1 class="text-center text-dark">{{ __("Listado de usuarios") }}</h1>
 
-<table class="table table-danger table-striped" style="width: 100%">
+<table class="table table-success table-striped" style="width: 100%">
     <thead>
     <tr>
         <th scope="col">{{ ("Nombre") }}</th>

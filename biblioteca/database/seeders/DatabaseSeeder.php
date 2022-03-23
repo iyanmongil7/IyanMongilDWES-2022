@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             'autor'=>'J.R.R. Tolkien',
             'editorial'=>'Minorauto',
             'año'=>'1995',
-            'imagen'=>'anillos.jpg'
+            'imagen'=>'señoranillos.jpg'
         ]);
         
         Libro::create([
@@ -39,28 +39,28 @@ class DatabaseSeeder extends Seeder
             'autor'=>'Suzanne Collins',
             'editorial'=>'Scholastic Corporation',
             'año'=>'2012',
-            'imagen'=>'harry.jpg'
+            'imagen'=>'juegosdelhambre.jpg'
         ]);
         Libro::create([
             'nombre'=>'Las cronicas de narnia',
             'autor'=>'C S. Lewis',
             'editorial'=>'Planeta',
             'año'=>'1950',
-            'imagen'=>'harry.jpg'
+            'imagen'=>'cronicasnarnia.jpg'
         ]);
         Libro::create([
             'nombre'=>'The wicther: El ultimo deseo',
             'autor'=>'Andrezej Sapkowski',
             'editorial'=>'Coleccionista',
             'año'=>'2002',
-            'imagen'=>'harry.jpg'
+            'imagen'=>'thewitcher.jpg'
         ]);
         Libro::create([
             'nombre'=>'Assassin Creed',
             'autor'=>'Oliver Bowden',
             'editorial'=>'Minorauto',
             'año'=>'2021',
-            'imagen'=>'harry.jpg'
+            'imagen'=>'assassins.jpg'
         ]);
     }
 }

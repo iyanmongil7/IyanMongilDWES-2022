@@ -24,11 +24,11 @@ Route::get('/', function () {
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('admin')->group(function(){
-    Route::get('/',[\App\Http\Controllers\Admin\AdminController::class,'index']);
-    Route::get('users', [UserController::class, 'index']);
+Route::group(['middleware'=>['can:admin.list_users']], function(){
+    Route::get('/admin',[\App\Http\Controllers\Admin\AdminController::class,'index']);
+    Route::get('admin/users', [UserController::class, 'index']);
     
-    Route::resource('/libros', LibroController::class);
+    Route::resource('admin/libros', LibroController::class);
 
 });
 

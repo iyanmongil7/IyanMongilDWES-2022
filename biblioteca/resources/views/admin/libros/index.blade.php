@@ -2,9 +2,11 @@
 
 @section("content")
 
-    <h1 class="text-center text-success">{{ __("Listado de libros") }}</h1>
-    <a href="{{route('libros.create')}}" class="btn btn-primary btn-sm">Añadir</a>
-<table class="table table-danger table-striped" style="width: 100%">
+    <h1 class="text-center text-dark">{{ __("Listado de libros") }}</h1> 
+    <div class="text-center pt-2 pb-2">
+    <a href="{{route('libros.create')}}" class="btn btn-primary">Añadir</a>
+    </div>
+<table class="table table-success table-striped" style="width: 100%">
     <thead>
     <tr>
         

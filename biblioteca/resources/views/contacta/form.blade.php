@@ -1,6 +1,6 @@
 <form class="w-full max-w-lg border-4 " method="POST" action="{{ route('contacta.store') }}">
     @csrf
-     <h1 class="font-semibold py-5 text-blue mb-10 bg-blue-900 text-white px-5"> Formulario </h1>
+     <h1 class="font-semibold py-5 text-blue mb-10 bg-green-700  text-white px-5"> Formulario </h1>
     
     <div class="flex flex-wrap -mt-10">
         <div class="w-full px-5">
@@ -49,7 +49,7 @@
     </div>
     <div class="md:flex md:items-center">
         <div class="md:w-1/3">
-            <button class="shadow bg-teal-400 mt-5 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
+            <button class="shadow bg-green-700 text-center mt-5 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
                 {{ 'Enviar mensaje' }}
             </button>
         </div>
