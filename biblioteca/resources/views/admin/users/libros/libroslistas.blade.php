@@ -20,10 +20,15 @@
                     <div class="text-center border flex-column d-flex justify-content-center w-50 ">
                         <h2 class="px-2 py-2 text center">{{ $libro->nombre }}</h2>
                         <img class="img-fluid text-center" src="{{$libro->imagen}}">
+                    
+                        @if(Auth::check() and Auth::user()->hasRoles('premium'))
+                    <a href="{{url('admin')}}" class="btn btn-primary">
+                        {{__('alquilar') }}
+                    </a>
+                    @endif
                     </div>
                 </div>
             
-
             @empty
                 <tr>
                     <td colspan="4">
