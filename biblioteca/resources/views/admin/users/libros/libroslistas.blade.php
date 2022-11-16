@@ -19,11 +19,11 @@
                 <div class="col-6 d-flex justify-content-center pb-5">
                     <div class="text-center border flex-column d-flex justify-content-center w-50 ">
                         <h2 class="px-2 py-2 text center">{{ $libro->nombre }}</h2>
-                        <img class="img-fluid text-center" src="{{$libro->imagen}}">
+                        <img class="w-100 img-fluid text-center" src="{{$libro->imagen}}">
                     
                         @if(Auth::check() and Auth::user()->hasRoles('premium'))
-                    <a href="{{url('admin')}}" class="btn btn-primary">
-                        {{__('alquilar') }}
+                    <a href="{{route('crearReserva', $libro->id)}}" class="btn btn-primary">
+                        {{__('prestamo') }}
                     </a>
                     @endif
                     </div>

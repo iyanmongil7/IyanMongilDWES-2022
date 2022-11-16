@@ -17,6 +17,7 @@ class CreatedPrestamosTable extends Migration
             $table->foreignId('usuario');
             $table->foreignId('libros');
             $table->date('fecha');
+            $table->timestamps();
         });
     }
 

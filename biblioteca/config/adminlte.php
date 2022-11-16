@@ -227,13 +227,14 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
+            'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
         [
-            'type'         => 'fullscreen-widget',
+            'text' => '',
+            'icon' => 'fas fa-fw fa-home',
             'topnav_right' => true,
+            'url'  => 'http://biblioteca.test/librosUser/',
         ],
 
         // Sidebar items:

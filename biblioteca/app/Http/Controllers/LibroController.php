@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Libro;
 use App\Models\User;
+use App\Models\Prestamo;
+use Illuminate\Support\Facades\Auth;
 
 class LibroController extends Controller
 {
@@ -29,5 +31,17 @@ class LibroController extends Controller
         return view('admin.users.libros.libroslistas', compact('libros'));
     }
 
+    public function crearPrestamo($idLibro)
+    {
+        $idUsuario = Auth::user()->id;
+        $fecha = '2022-11-16';
+        Prestamo::create([
+            'usuario'=> $idUsuario,
+            'libros'=>$idLibro,
+            'fecha'=>$fecha,
+        ]);
+        return redirect(route("librosUser.index"))
+        ->with("success", __("Prestamo creado!"));
+    }
     
 }

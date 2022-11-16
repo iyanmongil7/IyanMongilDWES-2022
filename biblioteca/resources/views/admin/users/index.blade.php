@@ -31,7 +31,17 @@
                         }}
                 </td>
                 <td>{{ date_format($user->created_at, "d/m/Y") }}</td>
-
+                <td class="border px-4 py-2">
+             
+                <a href="#" class="text-red-400" onclick="event.preventDefault();
+                                document.getElementById('delete-user-{{ $user->id }}-form').submit();"><button class="btn btn-danger btn-sm">{{ __("Eliminar") }}</button>
+                </a>
+                <form id="delete-user-{{ $user->id }}-form" action="{{ route('users.destroy', $user->id) }}" method="POST" class="hidden">
+                    @method("DELETE")
+                    @csrf
+                </form>
+              
+                </td>
             </tr>
         @empty
             <tr>
@@ -41,6 +51,7 @@
                         <span class="block sm:inline">{{ __("Todavía no hay nada que mostrar aquí") }}</span>
                     </div>
                 </td>
+
             </tr>
         @endforelse
     </tbody>

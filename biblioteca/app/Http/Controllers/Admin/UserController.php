@@ -13,4 +13,10 @@ class UserController extends Controller
         $users = User::paginate(10);
         return view('admin.users.index', compact("users"));
     }
+    public function destroy($id)
+    {
+        $user=User::find($id);
+        $user->delete();
+        return back()->withErrors(['', 'msg']);
+    }
 }
